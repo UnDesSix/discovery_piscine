@@ -2,11 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <style>
+        .tab {
+            border-collapse: collapse;
+        }
+        .row {
+            outline: solid;
+        }
+        .left_cell {
+            border: 1px solid grey;
+            background-color:#c3c77e;
+            height:150px;
+            width: 50%;
+            border-top: 0;
+            border-left: 0;
+            border-bottom: 0;
+        }
+        .right_cell {
+            border: 1px solid grey;
+            background-color:#f9c4af;
+            height:150px;
+            width: 50%;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 0;
+        }
+    </style>
 </head>
-<table style="border-collapse: collapse;" width="1000">
-    <tr style="outline: solid;">
-      <td style="border: 1px solid grey; background-color:#c3c77e; height:150px; width: 50%; border-top: 0; border-left: 0; border-bottom: 0;">Hello</td>
-      <td style="border: 1px solid grey; background-color:#f9c4af; height:150px; width: 50%; border-top: 0; border-right: 0; border-bottom: 0;">World!</td>
+<table class="tab" width="1000">
+    <tr class="row">
+      <td class="left_cell">Hello</td>
+      <td class="right_cell">World!</td>
     </tr>
   </table>
 </body>

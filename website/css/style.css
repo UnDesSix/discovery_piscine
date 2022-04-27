@@ -1,0 +1,44 @@
+@font-face {
+    font-family: Kontanter-Bold;
+    src: url("../font/Kontanter-Bold.woff") format("woff");
+}
+
+html, body {
+	background-color: #eff6e0;
+	margin: 0;
+}
+
+header {
+	background-color: #01161e;
+	padding: 15px;
+}
+
+nav {
+	text-align: center;
+}
+
+#logo {
+	color: #eff6e0;
+	font-family: 'Kontanter-Bold';
+	font-size: 50px;
+}
+
+.flag {
+	width: 35px;
+	border-radius: 2px;
+	float: right;
+	margin: 15px 0 0 0;
+}
+
+.menu {
+	color: #eff6e0;
+	border: none;
+	background-color: transparent;
+	padding-top: 15px;
+	cursor: pointer;
+}
+
+.menu:hover {
+	border-color: #eff6e0;
+}
+

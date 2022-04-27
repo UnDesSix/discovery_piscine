@@ -1,0 +1,48 @@
+html, body {
+    margin: 0;
+    text-align: center;
+}
+
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#title {
+    font-size: 3.5vw;
+    /* text-align: center; */
+    font-family: Verdana;
+}
+
+#name {
+    /* text-align: center; */
+    font-size: 5vw;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+#level {
+    /* text-align: center; */
+    font-size: 4vw;
+    color: grey;
+    font-family: Verdana;
+
+}
+
+#place {
+    /* text-align: center; */
+    font-size: 4vw;
+    font-family: Verdana;
+}
+
+.contact {
+    background-color:#000000;
+    height: 30vw;
+    width: 100%;
+    text-align: center;
+    font-size: 4vw;
+    color:aliceblue;
+    font-family: Verdana;
+    cursor: pointer;
+}

@@ -30,15 +30,32 @@ nav {
 	margin: 15px 0 0 0;
 }
 
+#profile {
+	padding: 20px;
+}
+
 .menu {
 	color: #eff6e0;
 	border: none;
+	border-bottom: solid;
+	border-color: #01161e;
 	background-color: transparent;
-	padding-top: 15px;
+	padding: 5px;
+	margin: 5px;
 	cursor: pointer;
 }
 
 .menu:hover {
+	border-bottom: solid;
 	border-color: #eff6e0;
 }
 
+.menu:active {
+	border-bottom: solid;
+	border-color: #eff6e0;
+}
+
+article {
+	margin: 10px;
+	text-align: justify;
+}

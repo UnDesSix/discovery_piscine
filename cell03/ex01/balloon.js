@@ -20,15 +20,11 @@ function changeColor (direction) {
     let color_id = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--color-id'));
 
     // Increment/Decrement the color_id until 3 is reached, then return to 1
-    
     color_id = color_id + direction;
-
     if (color_id > 3)
         color_id = 1;
-    
     if (color_id < 1)
         color_id = 3;
-    console.log(color_id)
 
     // Change the variables in css sheet
     if (color_id == 1) {

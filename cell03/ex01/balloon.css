@@ -1,0 +1,12 @@
+:root {
+  --size: 200px;
+  --color-id: 1;
+  --color: red;
+}
+
+#balloon {
+  width: var(--size);
+  height: var(--size);
+  border-radius: calc(var(--size) / 2);
+  background-color: var(--color);
+}

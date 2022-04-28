@@ -37,4 +37,4 @@ function alertMess(){
     alert("Please use me...")
   }
 
-setInterval(alertMess,30000)//Runs the "func" function every second
+setInterval(alertMess,30000) //Runs the "alertMess" function every 30 seconds

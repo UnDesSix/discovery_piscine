@@ -1,3 +1,5 @@
+let cookies = [];
+
 function createDiv(task) {
     // Create the div_child
     let element = document.createElement("div");
@@ -6,7 +8,12 @@ function createDiv(task) {
     // remove element onclick;
     element.onclick = function () {
         if (window.confirm("Are you sure you want to delete \"" + this.textContent + "\" ?"))
+        {
             this.parentElement.removeChild(this);
+            let index = cookies.indexOf(this.textContent);
+            cookies.splice(index, 1);
+            document.cookie = cookies;
+        }
     };
 
     // Create text node inside the element div and append to the div_child
@@ -15,6 +22,8 @@ function createDiv(task) {
     // Append the div_child to the div_parent
     document.getElementById('ft_list').insertBefore(element, document.getElementsByClassName('task')[0]);
 
+    cookies.push(element.textContent);
+    document.cookie = cookies;
 }
 
 function newTask() {
@@ -22,7 +31,12 @@ function newTask() {
     createDiv(task);
 }
 
-function cookiesManager () {
-    var znachenie = $("div").text();
-    cookie("nazvanie_cookie")
+function init() {
+    let str = document.cookie;
+    const cookies = str.split(',');
+    for (const element of cookies) {
+        createDiv(element);
+        }
 }
+
+window.onload = init();

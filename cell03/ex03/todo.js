@@ -36,6 +36,8 @@ function newTask() {
 
 
 function restoreCookies() {
+    if (!document.cookie)
+        return ;
     const cookies = document.cookie.split(";");
     for (const cookie of cookies) {
         const value = cookie.split("=")

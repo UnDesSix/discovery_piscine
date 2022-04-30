@@ -31,8 +31,6 @@ function restoreCookies() {
 
 function addCookie(cvalue, ckey) {
     const valid_day = 2;
-    var now = new Date();
-
     var expire_date = (new Date(Date.now()+ valid_day * 24 * 60 * 60 * 1000)).toUTCString();
     document.cookie= ckey + "=" + cvalue + ";expires=" + expire_date + "; SameSite=None; Secure";
  }

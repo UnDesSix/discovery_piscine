@@ -3,22 +3,35 @@
     src: url("../font/Kontanter-Bold.woff") format("woff");
 }
 
+:root {
+	--color-1 : #333533;
+	--color-2 : #202020;
+	--color-3 : #ffc300;
+	--color-4 : aliceblue;
+}
+
 html, body {
-	background-color: #eff6e0;
+	background-color: var(--color-2);
 	margin: 0;
+	color: var(--color-4);
 }
 
 header {
-	background-color: #01161e;
-	padding: 15px;
+	background-color: var(--color-1);
+	width: 100vw;
+	top: 0;
+	position: fixed;
 }
 
 nav {
 	text-align: center;
+	width: 100vw;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 #logo {
-	color: #eff6e0;
+	color: var(--color-3);
 	font-family: 'Kontanter-Bold';
 	font-size: 50px;
 }
@@ -26,8 +39,7 @@ nav {
 .flag {
 	width: 35px;
 	border-radius: 2px;
-	float: right;
-	margin: 15px 0 0 0;
+	/* margin-left: 60vw; */
 }
 
 #profile {
@@ -35,24 +47,24 @@ nav {
 }
 
 .menu {
-	color: #eff6e0;
+	color: var(--color-4);
 	border: none;
 	border-bottom: solid;
-	border-color: #01161e;
+	border-color: var(--color-1);
 	background-color: transparent;
-	padding: 5px;
-	margin: 5px;
+	font-size: 20px;
 	cursor: pointer;
+	padding: 0px;
 }
 
 .menu:hover {
 	border-bottom: solid;
-	border-color: #eff6e0;
+	border-color: var(--color-4);
 }
 
 .menu:active {
 	border-bottom: solid;
-	border-color: #eff6e0;
+	border-color: var(--color-3);
 }
 
 article {

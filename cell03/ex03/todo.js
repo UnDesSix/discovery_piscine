@@ -1,10 +1,11 @@
 function createDiv(task, uid) {
-    // Create the div_child
+    // create the div_child with 'task' as a class
     let element = document.createElement("div");
     element.classList.add('task');
+
+    // generate unique uid based on date and set it as value for 'data-todo' attribute
     if (uid == 0)
         uid = Date.now()
-
     element.setAttribute('data-todo', uid);
 
     // remove element onclick;
@@ -34,7 +35,6 @@ function newTask() {
         createDiv(task, 0);
 }
 
-
 function restoreCookies() {
     if (!document.cookie)
         return ;
@@ -45,24 +45,22 @@ function restoreCookies() {
     }
 }
 
-
 function addCookie(cvalue, ckey) {
+    const valid_day = 2;
     var now = new Date();
-    now.setTime(now.getTime() + 1 * 3600 * 1000);
 
-    document.cookie= ckey + "=" + cvalue + ";expires=" + now.toUTCString() + "; SameSite=None; Secure";
+    var expire_date = (new Date(Date.now()+ valid_day * 24 * 60 * 60 * 1000)).toUTCString();
+    document.cookie= ckey + "=" + cvalue + ";expires=" + expire_date + "; SameSite=None; Secure";
  }
 
  function removeCookies(key_to_del) {
     var res = document.cookie;
     var multiple = res.split(";");
     for(var i = 0 ; i < multiple.length; i++) {
-       var key = multiple[i].split("=");
-       key[0] = parseInt(key[0]);
-       if (key[0] == key_to_del)
-       {
-        document.cookie=key[0]+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=None; Secure";
-    }
+        var key = multiple[i].split("=");
+        key[0] = parseInt(key[0]);
+        if (key[0] == key_to_del)
+            document.cookie=key[0]+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=None; Secure";
     }
  }
 

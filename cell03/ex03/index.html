@@ -2,13 +2,58 @@
 <html>
     <head>
 			<meta charset="utf-8">
-      <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+      <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+      <style>
+
+        .center {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 10px;
+        }
+
+        #button {
+          background-color: rgb(165, 60, 19);
+          color: aliceblue;
+
+          width: 10vw;
+          height: 5vw;
+          margin: 20px;
+          size: 20px;
+          border-radius: 5vw;
+        }
+
+        #button:hover {
+          background-color: rgba(165, 60, 19, 0.3);
+          color: rgb(165, 60, 19);
+        }
+
+        #button:active {
+          background-color: rgba(165, 60, 19, 0.1);
+          color: rgb(165, 60, 19);
+        }
+
+        #ft_list {
+          border: solid 1px;
+          justify-content: center;
+        }
+
+        .task {
+          margin: 10px;
+          display: flex;
+          justify-content: center;
+        }
+
+      </style>
     </head>
     <body>
-      <header><h1>Todo List</h1></header>
-      <button onclick="newTask()">New</button>
-      <div id="ft_list">
+      <div class="center">
+        <h1>Todo List</h1>
+      </div>
+      <div class="center">
+        <button id="button" onclick="newTask()">New</button>
+      </div>
 
+      <div id="ft_list">
       </div>
     </body>
 		<script src="todo.js"></script>

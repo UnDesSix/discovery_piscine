@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+			<meta charset="utf-8">
+      <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+			<script src="jquery-3.6.0.min.js"></script> 
+      <script>
+        function nNumber(n) {
+          return (n >= 0 && Math.floor(n) === +n)
+        }
+
+        function computeValue(valueA, valueB, operator) {
+          if (operator == '+')
+            return valueA + valueB;
+          if (operator == '-')
+            return valueA - valueB;
+          if (operator == '*')
+            return valueA * valueB;
+          if (valueB == 0)
+            return "It\'s over 9000!"
+          if (operator == '/')
+            return valueA / valueB;
+          if (operator == '%')
+            return valueA % valueB;
+        }
+        
+        function alertMess(){
+          alert("Please use me...")
+        }
+
+        setInterval(alertMess,30000)
+
+        $(document).ready(function(){
+          $("input[value='Try me!']").click(function(){
+            var valueA = $("input[placeholder='value A']").val();
+            var valueB = $("input[placeholder='value B']").val();
+            var operator = $("select[name='operators']").find(":selected").val();
+            if (isNaN(valueA) || isNaN(valueB) || !nNumber(valueA) || !nNumber(valueB) || !operator) {
+              alert("Error :(");
+              return ;
+            }
+            valueA = parseInt(valueA);
+            valueB = parseInt(valueB);
+            let result = computeValue(valueA, valueB, operator);
+            console.log(result);
+            alert(result);
+          })
+        });
+      </script>
+    </head>
+    <body>
+      <header>
+        <h1>CALCULATOR</h1>
+      </header>
+      <main>
+        <input type="text" placeholder="value A">
+        <select name="operators">
+          <option value="" disabled selected>Select your operators</option>
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+          <option value="%">%</option>
+        </select>
+        <input type="text" placeholder="value B">
+        <input type="submit" value="Try me!">
+      </main>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+			<meta charset="utf-8">
+      <script src="jquery-3.6.0.min.js"></script>
+      <style>
+        #balloon {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background-color: red;
+        }
+      </style>
+      <script>
+        function changeSize(size_px, offset) {
+          let size = parseInt(size_px)
+          size += offset;
+          if (size > 420)
+              size = 200;
+          if (size < 200)
+              size = 200;
+          return (size + 'px');
+        }
+
+        function changeColor(color, direction) {
+          const colors = ["rgb(255, 0, 0)", "rgb(0, 255, 0)", "rgb(0, 0, 255)"];
+          color_id = colors.indexOf(color);
+          color_id = color_id + direction;
+          if (color_id > 2)
+              color_id = 0;
+          if (color_id < 0)
+              color_id = 2;
+          return colors[color_id];
+        }
+
+        function routine(elm, offset, direction) {
+          var size_px = elm.css("width");
+          var color = elm.css("background-color");
+          size_px = changeSize(size_px, offset);
+          color = changeColor(color, direction);
+          elm.css("width", size_px);
+          elm.css("height", size_px);
+          elm.css("background-color", color);
+        }
+
+        $(document).ready(function() {
+          $("#balloon").click(function() {
+            routine($(this), 10, 1);
+          });
+          $("#balloon").mouseleave(function() {
+            routine($(this), -5, -1);
+          });
+        });
+      </script>
+    </head>
+    <body>
+      <div id="balloon"></div>
+    </body>
+</html>
